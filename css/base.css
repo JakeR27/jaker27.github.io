@@ -49,6 +49,7 @@ body {
     display: inline-block;
     font-size: 13pt;
     position: relative;
+    transition: transform 0.1s;
 }
 
 .button i {
@@ -57,8 +58,8 @@ body {
     transition: transform 0.1s;
 }
 
-.button:hover i {
-    transform: scale(125%)
+.button:hover {
+    transform: scale(105%)
 }
 
 #media-links {
@@ -118,13 +119,4 @@ body {
 
 #theme-checkbox:checked + .label #ball {
 	transform: translateX(24px);
-}
-
-
-.fa-moon {
-	color: #333;
-}
-
-.fa-sun {
-	color: #eee;
 }
