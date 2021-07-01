@@ -4,15 +4,24 @@ body {
     overflow: hidden;
 }
 
+#splash {
+    position: relative;
+    height: calc(100vh + 53px);
+}
+
+#spash-canvas {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;;
+}
+
 .flex {
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-#splash div {
-    margin-bottom: 80px;
 }
 
 #text-content #text {
@@ -69,7 +78,7 @@ body {
 
 #theme-changer {
     position: fixed;
-    bottom: -50px;
+    bottom: 25px;
 }
 
 #theme-changer * {
