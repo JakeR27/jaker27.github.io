@@ -1,4 +1,28 @@
+.button {
+    border: 2px solid #eee;
+}
+
 body {
-    background-color: rgb(51, 51, 51);
-    color: white;
+    background-color: #333333;
+    color: #eee
+}
+
+#media-links div * {
+    filter: brightness(0) saturate(100%) invert(99%) sepia(7%) saturate(183%) hue-rotate(73deg) brightness(110%) contrast(87%);
+}
+
+.label {
+    background-color: #111;
+}
+
+.label #ball {
+	background-color: #eee;
+}
+
+.fa-moon {
+	color: #333;
+}
+
+.fa-sun {
+	color: #eee;
 }
