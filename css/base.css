@@ -9,12 +9,13 @@ body {
     height: calc(100vh + 53px);
 }
 
-#spash-canvas {
+#splash-canvas {
     height: 100%;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
-    width: 100vw;;
+    width: 100%;
+    z-index: -1;
 }
 
 .flex {
@@ -55,11 +56,13 @@ body {
 .button i {
     position: absolute;
     right: 15px;
-    transition: transform 0.1s;
+    transition: all 0.1s;
+
 }
 
 .button:hover {
-    transform: scale(105%)
+    transform: scale(105%);
+    font-weight: 600;
 }
 
 #media-links {
