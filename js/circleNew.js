@@ -30,7 +30,8 @@ let red = ["#660000", "#cc0000", "#ff0000", "#ff3333", "#ff9999"];
 let pink = ["#660033", "#cc0066", "#ff0080", "#ff3399", "#ff99cc"];
 let grey = ["#222222", "#666666", "#999999", "#cccccc", "#dddddd"];
 
-let best = ["#1c2133", "#c0b283", "#a239ca", "#ff3b3f", "#caebf2", "#2b6ea8", "#ab987a"]
+// let best = ["#1c2133", "#c0b283", "#a239ca", "#ff3b3f", "#caebf2", "#2b6ea8", "#ab987a"]
+let best = ["#1c2133", "#c0b283", "#a239ca", "#caebf2", "#2b6ea8", "#ab987a"]
 
 lime.splice(0,4);
 green.splice(0,4);
