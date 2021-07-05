@@ -26,3 +26,21 @@ body {
 .fa-sun {
 	color: #eee;
 }
+
+.sem {
+    background: none;
+}
+
+.sem h2 {
+    background-color: royalblue;
+}
+
+.sem-item {
+    color: #333;
+    background: #eee;
+}
+
+.prog-bar {
+    background-color: royalblue;
+    color: #eee;
+}

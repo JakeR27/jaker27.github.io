@@ -25,6 +25,10 @@ body {
     justify-content: center;
 }
 
+.flex-row {
+    flex-direction: row;
+}
+
 #text-content #text {
     margin-bottom: 20px;
 }
@@ -122,4 +126,69 @@ body {
 
 #theme-checkbox:checked + .label #ball {
 	transform: translateX(24px);
+}
+
+.year {
+    margin: 0px 20px;
+}
+
+.semesters {
+    align-items: baseline;
+}
+
+.sem {
+    margin: 0px 30px;
+    padding-bottom: 0px;
+    border-radius: 15px;
+    width: 25vw;
+}
+
+.sem h2 {
+    margin: 0;
+    padding: 10px;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.sem-item {
+    position: relative;
+}
+
+.sem-item * {
+    margin: 5px 0px;
+    padding: 0;
+}
+
+.module {
+    flex-grow: 10;
+    max-width: 18vw;
+    text-align: left;
+    padding: 0 0 0 8px;
+    z-index: 1;
+}
+
+.perc {
+    flex-grow: 1;
+    z-index: 1;
+}
+
+.module-bottom {
+    padding-bottom: 10px;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.prog-bar-container {
+    display: flex;
+    padding: 5px;
+    flex-grow: 5;
+    max-width: 6vw;
+    height: 2vh;
+    justify-content: right;
+}
+
+.prog-bar {
+    border-radius: 6px;
+    height: 2.2vh;
+    z-index: 0;
+    text-align: right;
+    padding: 0 8px 0 0;
 }
