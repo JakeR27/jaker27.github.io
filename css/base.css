@@ -186,7 +186,7 @@ body {
 }
 
 .prog-bar {
-    border-radius: 6px;
+    border-radius: 12px;
     height: 2.2vh;
     z-index: 0;
     text-align: right;
