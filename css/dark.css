@@ -31,8 +31,16 @@ body {
     background: none;
 }
 
-.sem h2 {
+#year1 .sem h2 {
+    background-color: limegreen;
+}
+
+#year2 .sem h2 {
     background-color: royalblue;
+}
+
+#year3 .sem h2 {
+    background-color: orangered;
 }
 
 .sem-item {
@@ -41,6 +49,17 @@ body {
 }
 
 .prog-bar {
-    background-color: royalblue;
     color: #eee;
+}
+
+#year1 .prog-bar {
+    background-color: limegreen;
+}
+
+#year2 .prog-bar {
+    background-color: royalblue;
+}
+
+#year3 .prog-bar {
+    background-color: orangered;
 }

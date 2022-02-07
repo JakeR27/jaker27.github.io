@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Jake Bailey-Saltmarsh</title>
+		<link rel="stylesheet" href="/css/base.css">
+		<link id="css-theme" rel="stylesheet" href="/css/dark.css">
+        <link id="css-specific" rel="stylesheet" href="/css/uni.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"> 
+	</head>
+	<body>
+        <section id="year1" class="flex year">
+            <h1>Year 1</h1>
+            <div class="semesters flex flex-row">
+                <div id="sem1" class="sem">
+                    <h2>Semester 1</h2>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">Programming for the Web</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 95%;">95%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">Computer Architecture</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 89%;">89%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">Fundamental Mathematical Concepts</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 55%;">55%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">Procedural Programming</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 95%;">95%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row module-bottom">
+                        <p class="module">Professional Computing</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 80%;">80%</div></div>
+                    </div>
+                </div>
+                <div id="sem2" class="sem">
+                    <h2>Semester 2</h2>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">Introduction to Web Technologies</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 86%;">86%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">Databases</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 55%;">55%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">Computer Processors</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 100%;">100%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">Introduction to Discrete Mathematics</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 32%;">32%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">Object Oriented Programming</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 30%;">30%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row module-bottom">
+                        <p class="module">Programming Project</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 89%;">89%</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="year2" class="flex year">
+            <h1>Year 2</h1>
+            <div class="semesters flex flex-row">
+                <div id="sem1" class="sem">
+                    <h2>Semester 1</h2>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">Web Application Development</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 50%;">50%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">Operating Systems</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 50%;">50%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">Numerical Computation</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 50%;">50%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">Algorithms I</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 50%;">50%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">User Interfaces</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 50%;">50%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row module-bottom">
+                        <p class="module">Software Eng Principles</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 50%;">50%</div></div>
+                    </div>
+                </div>
+                <div id="sem2" class="sem">
+                    <h2>Semester 2</h2>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">Networks</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 50%;">50%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">Fromal Language & Finite Automata</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 50%;">50%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">Artificial Intelligence</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 50%;">50%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">Algorithms II</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 50%;">50%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row">
+                        <p class="module">Software Engineering Project</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 50%;">50%</div></div>
+                    </div>
+                    <div class="sem-item flex flex-row module-bottom">
+                        <p class="module">Compiler Design and Construction</p>
+                        <div class="prog-bar-container"><div class="prog-bar" style="width: 50%;">50%</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		<section id="splash" class="flex">
+			<div id="splash-div-canvas">
+				<canvas id="splash-canvas"></canvas>
+			</div>
+			<div id="other-content" class="flex">
+                <div id="buttons">
+                    <div id="back-button" class="button">
+                        <i class="fas fa-arrow-left"></i>
+                        Back
+                    </div>
+                </div>
+				<div id="theme-changer">
+					<input type="checkbox" id="theme-checkbox">
+					<label class="label" for="theme-checkbox">
+						<i class="fas fa-moon"></i>
+						<i class="fas fa-sun"></i>
+						<div id="ball"></div>
+					</label>
+				</div>
+			</div>
+		</section>
+	</body>
+	<script src="/js/theme.js"></script>
+	<script src="/js/circleNew.js"></script>
+    <script src="/js/buttons.js"></script>
+</html>

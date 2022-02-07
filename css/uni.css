@@ -1,0 +1,11 @@
+body {
+    overflow: auto;
+}
+
+#splash {
+    height: auto;
+}
+
+#other-content {
+    margin-top: 20px;
+}

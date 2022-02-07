@@ -1,132 +1,391 @@
 <!DOCTYPE html>
-<html>
-	<head>		
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Jake Bailey-Saltmarsh</title>
-		<link rel="stylesheet" href="/css/base.css">
-		<link id="css-theme" rel="stylesheet" href="/css/dark.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
-		<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"> 
-	</head>
-	<body>
-        <section id="year1" class="flex year">
-            <h1>Year 1</h1>
-            <div class="semesters flex flex-row">
-                <div id="sem1" class="sem">
-                    <h2>Semester 1</h2>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Programming for the Web</p>
-                        <div class="prog-bar-container"><div class="prog-bar" style="width: 95%;">95%</div></div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sliding Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Archivo:300,500,700|Open+Sans:300,700|JetBrains+Mono:300,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div id="sliders">
+        <div class="sliding-page year-1">
+            <div class="sliding-page-content">
+                <div class="upper-content">
+                    <div class="title">
+                        <h1 class="year-title">Year 1</h1>
                     </div>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Computer Architecture</p>
-                        <div class="prog-bar-container"><div class="prog-bar" style="width: 89%;">89%</div></div>
-                    </div>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Fundamental Mathematical Concepts</p>
-                        <div class="prog-bar-container"><div class="prog-bar" style="width: 55%;">55%</div></div>
-                    </div>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Procedural Programming</p>
-                        <div class="prog-bar-container"><div class="prog-bar" style="width: 95%;">95%</div></div>
-                    </div>
-                    <div class="sem-item flex flex-row module-bottom">
-                        <p class="module">Professional Computing</p>
-                        <div class="prog-bar-container"><div class="prog-bar" style="width: 80%;">80%</div></div>
+                    <div class="overview">
+                        <p>My first year focused on the fundamentals of programming
+                            and the mathematical principles that underpin computer
+                            science today.</p>
+                        <p>I was taught the <span>C</span>, <span>Java</span>,
+                            <span>HTML</span>, <span>CSS</span> and
+                            <span>JavaScript</span> languages, alongside covering
+                            <span>Graph Theory</span>, <span>Predicate Logic</span>
+                            and <span>Probability</span> in mathematics.</p>
+                        <p>For me, the highlight of the year was building an 8-bit
+                            computer from logic gates, then programming it with
+                            assembly - all in <span>COMP1212</span></p>
+                        </p>
                     </div>
                 </div>
-                <div id="sem2" class="sem">
-                    <h2>Semester 2</h2>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Introduction to Web Technologies</p>
-                        <div class="prog-bar-container"><div class="prog-bar" style="width: 86%;">86%</div></div>
+
+                <div class="semesters">
+                    <div class="semester">
+                        <h2 class="semester-title">1st Semester</h2>
+                        <div class="modules">
+                            <div class="module">
+                                <div class="module-grade-container">95%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1011</h5>
+                                    <p class="module-desc">Programming for the web</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">89%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1211</h5>
+                                    <p class="module-desc">Computer Architecture</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">55%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1421</h5>
+                                    <p class="module-desc">Fundamental Mathematics</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">95%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1711</h5>
+                                    <p class="module-desc">Procedural Programming</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">80%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1911</h5>
+                                    <p class="module-desc">Professional Computing</p>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Databases</p>
-                        <div class="prog-bar-container"><div class="prog-bar" style="width: 55%;">55%</div></div>
-                    </div>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Computer Processors</p>
-                        <div class="prog-bar-container"><div class="prog-bar" style="width: 100%;">100%</div></div>
-                    </div>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Introduction to Discrete Mathematics</p>
-                        <div class="prog-bar-container"><div class="prog-bar" style="width: 32%;">32%</div></div>
-                    </div>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Object Oriented Programming</p>
-                        <div class="prog-bar-container"><div class="prog-bar" style="width: 30%;">30%</div></div>
-                    </div>
-                    <div class="sem-item flex flex-row module-bottom">
-                        <p class="module">Programming Project</p>
-                        <div class="prog-bar-container"><div class="prog-bar" style="width: 89%;">89%</div></div>
+                    <div class="semester">
+                        <h2 class="semester-title">2nd Semester</h2>
+                        <div class="modules">
+                            <div class="module">
+                                <div class="module-grade-container">86%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1021</h5>
+                                    <p class="module-desc">Intro to Web Technologies</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">92%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1121</h5>
+                                    <p class="module-desc">Databases</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container three-digit">100%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1212</h5>
+                                    <p class="module-desc">Computer Processors</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">86%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1511</h5>
+                                    <p class="module-desc">Intro to Discrete Mathematics</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">96%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1721</h5>
+                                    <p class="module-desc">Object Oriented Programming</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">89%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1921</h5>
+                                    <p class="module-desc">Programming Project</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <section id="year2" class="flex year">
-            <h1>Year 2</h1>
-            <div class="semesters flex flex-row">
-                <div id="sem1" class="sem">
-                    <h2>Semester 1</h2>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Module</p><p class="perc">XX%</p>
-                    </div>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Module</p><p class="perc">XX%</p>
-                    </div>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Module</p><p class="perc">XX%</p>
-                    </div>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Module</p><p class="perc">XX%</p>
-                    </div>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Module</p><p class="perc">XX%</p>
-                    </div>
-                    <div class="sem-item flex flex-row module-bottom">
-                        <p class="module">Module</p><p class="perc">XX%</p>
-                    </div>
+        </div>
+        <div class="sliding-page year-2">
+            <div class="sliding-page-content">
+                <div class="title">
+                    <h1 class="year-title">Year 2</h1>
                 </div>
-                <div id="sem2" class="sem">
-                    <h2>Semester 2</h2>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Module</p><p class="perc">XX%</p>
+                <div class="semesters">
+                    <div class="semester">
+                        <h2 class="semester-title">1st Semester</h2>
+                        <div class="modules">
+                            <div class="module">
+                                <div class="module-grade-container">39%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP2011</h5>
+                                    <p class="module-desc module-desc-long">Web Application Development</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">37%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP221</h5>
+                                    <p class="module-desc">Operating Systems</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">29%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP2421</h5>
+                                    <p class="module-desc">Numerical Computation</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">16%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP2711</h5>
+                                    <p class="module-desc">Algorithms I</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">38%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP2811</h5>
+                                    <p class="module-desc">User Interfaces</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">00%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP2912</h5>
+                                    <p class="module-desc module-desc-long">Software Engineering Principles</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Module</p><p class="perc">XX%</p>
-                    </div>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Module</p><p class="perc">XX%</p>
-                    </div>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Module</p><p class="perc">XX%</p>
-                    </div>
-                    <div class="sem-item flex flex-row">
-                        <p class="module">Module</p><p class="perc">XX%</p>
-                    </div>
-                    <div class="sem-item flex flex-row module-bottom">
-                        <p class="module">Module</p><p class="perc">XX%</p>
+                    <div class="semester">
+                        <h2 class="semester-title">2nd Semester</h2>
+                        <div class="modules">
+                            <div class="module">
+                                <div class="module-grade-container">??%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP2221</h5>
+                                    <p class="module-desc">Networks</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">??%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP2321</h5>
+                                    <p class="module-desc module-desc-long">Formal Language & Finite Automata</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">??%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP2611</h5>
+                                    <p class="module-desc">Artificial Intelligence</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">??%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP2721</h5>
+                                    <p class="module-desc">Algorithms II</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">??%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP2913</h5>
+                                    <p class="module-desc">Software Engineering Project</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">??%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP2932</h5>
+                                    <p class="module-desc">Compiler Design & Construction</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-		<section id="splash" class="flex">
-			<div id="splash-div-canvas">
-				<canvas id="splash-canvas"></canvas>
-			</div>
-			<div id="other-content" class="flex">
-				<div id="theme-changer">
-					<input type="checkbox" id="theme-checkbox">
-					<label class="label" for="theme-checkbox">
-						<i class="fas fa-moon"></i>
-						<i class="fas fa-sun"></i>
-						<div id="ball"></div>
-					</label>
-				</div>
-			</div>
-		</section>
-	</body>
-	<script src="/js/theme.js"></script>
-	<script src="/js/circleNew.js"></script>
+        </div>
+        <div class="sliding-page year-3">
+            <div class="sliding-page-content">
+                <div class="title">
+                    <h1 class="year-title">Year 3</h1>
+                </div>
+                <div class="semesters">
+                    <div class="semester">
+                        <h2 class="semester-title">1st Semester</h2>
+                        <div class="modules">
+                            <div class="module">
+                                <div class="module-grade-container">95%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1011</h5>
+                                    <p class="module-desc">Programming for the web</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">89%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1211</h5>
+                                    <p class="module-desc">Computer Architecture</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">55%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1421</h5>
+                                    <p class="module-desc">Fundamental Mathematics</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">95%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1711</h5>
+                                    <p class="module-desc">Procedural Programming</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">80%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1911</h5>
+                                    <p class="module-desc">Professional Computing</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="semester">
+                        <h2 class="semester-title">2nd Semester</h2>
+                        <div class="modules">
+                            <div class="module">
+                                <div class="module-grade-container">86%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1021</h5>
+                                    <p class="module-desc">Intro to Web Technologies</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">92%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1121</h5>
+                                    <p class="module-desc">Databases</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">99%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1212</h5>
+                                    <p class="module-desc">Computer Processors</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">86%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1511</h5>
+                                    <p class="module-desc">Intro to Discrete Mathematics</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">96%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1721</h5>
+                                    <p class="module-desc">Object Oriented Programming</p>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <div class="module-grade-container">89%</div>
+                                <div class="module-text">
+                                    <h5 class="module-title">COMP1921</h5>
+                                    <p class="module-desc">Programming Project</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="overlay">
+        <div id="nav-button-container">
+            <div class="nav-button" id="nav-button-left">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="nav-button" id="nav-button-right">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+        <div id="timeline">
+            <div id="timeline-years">
+                <ul class="timeline-period year-1 active">
+                    <li>Sep</li>
+                    <li>Oct</li>
+                    <li>Nov</li>
+                    <li>Dec</li>
+                    <li class="period-year">2021</li>
+                    <li>Jan</li>
+                    <li>Feb</li>
+                    <li>Mar</li>
+                    <li>Apr</li>
+                    <li>Jun</li>
+                    <li>Jul</li>
+                    <li>Aug</li>
+                </ul>
+                <ul class="timeline-period year-2">
+                    <li>Sep</li>
+                    <li>Oct</li>
+                    <li>Nov</li>
+                    <li>Dec</li>
+                    <li class="period-year">2022</li>
+                    <li>Jan</li>
+                    <li>Feb</li>
+                    <li>Mar</li>
+                    <li>Apr</li>
+                    <li>Jun</li>
+                    <li>Jul</li>
+                    <li>Aug</li>
+                </ul>
+                <ul class="timeline-period year-3">
+                    <li>Sep</li>
+                    <li>Oct</li>
+                    <li>Nov</li>
+                    <li>Dec</li>
+                    <li class="period-year">2023</li>
+                    <li>Jan</li>
+                    <li>Feb</li>
+                    <li>Mar</li>
+                    <li>Apr</li>
+                    <li>Jun</li>
+                    <li>Jul</li>
+                    <li>Aug</li>
+                </ul>
+            </div>
+            <div id="timeline-lines">
+                <hr class="year-1 active">
+                <hr class="year-2">
+                <hr class="year-3">
+            </div>
+
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
 </html>

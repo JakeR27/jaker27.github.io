@@ -87,6 +87,10 @@ window.addEventListener("mousemove", function(event) {
     mouse.y = event.y;
 })
 
+window.addEventListener("resize", function(event) {
+    window.location.reload();
+})
+
 window.addEventListener("keypress", function(event) {
     key.keyCode = event.keyCode;
     if (key.keyCode == 32) {

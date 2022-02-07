@@ -1,15 +1,32 @@
+function nav(addr) {
+    window.location.href = addr;
+}
+
 let edu_button = document.getElementById("education-button");
 let crs_button = document.getElementById("courses-button");
 let wrk_button = document.getElementById("work-button");
+let bck_button = document.getElementById("back-button");
 
-edu_button.onclick = () => {
-    window.location.href = "uni.html"
-}
+try {
+    edu_button.onclick = () => {
+        window.location.href = "uni.html"
+    }
+} catch {}
 
-crs_button.onclick = () => {
-    window.location.href = "courses.html"
-}
+try {
+    crs_button.onclick = () => {
+        window.location.href = "courses.html"
+    }
+} catch {}
 
-wrk_button.onclick = () => {
-    window.location.href = "work.html"
-}
+try {
+    wrk_button.onclick = () => {
+        window.location.href = "work.html"
+    }
+} catch {}
+
+try {
+    bck_button.onclick = () => {
+        window.location.href = "index.html"
+    }
+} catch {}

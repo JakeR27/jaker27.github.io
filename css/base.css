@@ -64,6 +64,15 @@ body {
 
 }
 
+#back-button {
+    padding: 12px 25px 12px 45px;
+}
+
+#back-button i {
+    right: auto;
+    left: 15px;
+}
+
 .button:hover {
     transform: scale(105%);
     font-weight: 600;
@@ -182,7 +191,7 @@ body {
     flex-grow: 5;
     max-width: 6vw;
     height: 2vh;
-    justify-content: right;
+    /* justify-content: right; */
 }
 
 .prog-bar {
@@ -191,4 +200,5 @@ body {
     z-index: 0;
     text-align: right;
     padding: 0 8px 0 0;
+    margin: 0;
 }
