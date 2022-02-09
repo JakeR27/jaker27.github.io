@@ -21,7 +21,7 @@ try {
 
 try {
     wrk_button.onclick = () => {
-        window.location.href = "work.html"
+        window.location.href = "https://web.jakebs.xyz"
     }
 } catch {}
 
