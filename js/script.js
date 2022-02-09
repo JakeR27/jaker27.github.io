@@ -45,6 +45,24 @@ window.addEventListener("mousedown", (e) => {
     sliderContainer.classList.add("active");
 })
 
+window.addEventListener("touchstart", (e) => {
+
+    if (arrowHoverStatus.left) {
+        setSlide(currentSlide-1);
+        console.log("left here")
+        return;
+    }
+    if (arrowHoverStatus.right) {
+        setSlide(currentSlide+1);
+        return;
+    }
+
+    trackingMouse = true;
+    startMousePos.x = e.pageX - sliderContainer.offsetLeft;
+    scrollLeft = sliderContainer.scrollLeft;
+    sliderContainer.classList.add("active");
+})
+
 window.addEventListener("mousemove", (e) => {
     if (!trackingMouse) return;
     e.preventDefault();
@@ -54,7 +72,42 @@ window.addEventListener("mousemove", (e) => {
     console.log({walk, sc: sliderContainer.scrollLeft})
 })
 
+window.addEventListener("touchmove", (e) => {
+    if (!trackingMouse) return;
+    e.preventDefault();
+    const x = e.pageX - sliderContainer.offsetLeft;
+    const walk = 1.5 * (x - startMousePos.x);
+    sliderContainer.scrollLeft = scrollLeft - walk;
+    console.log({walk, sc: sliderContainer.scrollLeft})
+})
+
 window.addEventListener("mouseup", () => {
+    if (!trackingMouse) return;
+    trackingMouse = false;
+
+    sliderContainer.classList.remove("active");
+
+    let slideIndex = Math.round(sliderContainer.scrollLeft / vw());
+    console.log(slideIndex);
+
+    let timePeriod = 2000;
+    let animationStartTime = Date.now();
+    let p1 = sliderContainer.scrollLeft;
+    //let p2 = slideIndex * vw;
+
+    // let timeElapsedPercentage = 0;
+    // while (!trackingMouse && timeElapsedPercentage <= 1) {
+    //     timeElapsedPercentage = timeSince(animationStartTime, timePeriod)
+    //     let easeValue = easeFunction(timeElapsedPercentage);
+    //     sliderContainer.scrollLeft = p1 + (p2 - p1) * easeValue;
+    //     console.log({timeElapsedPercentage, sl: sliderContainer.scrollLeft, easeValue})
+    // }
+
+    setSlide(slideIndex);
+
+})
+
+window.addEventListener("touchend", () => {
     if (!trackingMouse) return;
     trackingMouse = false;
 
