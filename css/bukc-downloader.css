@@ -1,0 +1,30 @@
+body {
+    background: rgb(75, 183, 245);
+}
+
+.container {
+    margin: 0 auto;
+    width: fit-content;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputs {
+    display: block;
+}
+
+/*.center {*/
+/*    border-radius: 1rem;*/
+/*    padding: 1rem;*/
+/*    background: rgb(75, 183, 245);*/
+/*    box-shadow: 0 0 2px black;*/
+/*}*/
+
+.download-btn {
+    display: block;
+    margin: 1rem auto 0 auto;
+    background-color: rgb(75, 183, 245);
+    border-color: rgb(75, 183, 245);
+}
