@@ -21,14 +21,16 @@
                 <h5 class="card-title">BUKC Results Downloader</h5>
                 <div class="inputs">
                     <label for="results-url">Page URL:</label>
-                    <input name="results-url" id="results-url" type="text">
+                    <textarea name="results-url" id="results-url" cols="60" rows="6"> </textarea>
                 </div>
+
+                <label for="as-one">Download as one file?</label><input type="checkbox" name="as-one" id="as-one">
                 <button class="btn btn-primary download-btn" onclick="download()">Download</button>
             </div>
 
         </div>
     </div>
 </div>
-<script src="/js/bukc-downloader.js"></script>
+<script src="/js/bukc-downloaderv2.js"></script>
 </body>
 </html>
