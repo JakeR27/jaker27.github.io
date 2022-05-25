@@ -9,6 +9,6 @@ function setup() {
 function check() {
     if (passelem.value == "4becca") {
         storeItem("jr27.slider.becca.unlocked", "allow");
-        window.location.replace("index.html");
+        window.location.replace("4b.html");
     }
 }
