@@ -10,11 +10,6 @@ let CURRENT_EVENT_NOTES;
 
 let FONT_BIG, FONT_NORMAL;
 
-let CURRENT_RED = 200;
-let CURRENT_GREEN = 200;
-let CURRENT_BLUE = 200;
-let CURRENT_COLOR = 0;
-
 function preload() {
   FONT_BIG = loadFont("assets/Anton-Regular.ttf")
 }
@@ -37,8 +32,6 @@ function draw() {
   if (!UNLOCKED) {
     return;
   }
-  // background(COLORS[CURRENT_COLOR]);
-  // console.log(COLORS[CURRENT_COLOR])
   background(COLOR);
 
   let CX = width / 2;
@@ -160,13 +153,3 @@ function windowResized() {
   location.reload();
 }
 
-// function generateNewColor() {
-//   let prev = CURRENT_COLOR;
-//   let next = CURRENT_COLOR;
-//   while (next == prev) {
-//     let a = COLORS.length;
-//     let b = random();
-//     next = floor(a * b);
-//   }
-//   CURRENT_COLOR = next;
-// }
