@@ -19,10 +19,56 @@ function download() {
 
     let inputtext = document.getElementById("results-url").value;
     console.log(inputtext)
-    let apistring = convertToApi(inputtext)
-    console.log(apistring)
 
-    retrieveData(apistring).then(res => {
+    let links = inputtext.split("\n");
+    console.log(links);
+
+    let asOne = document.getElementById("as-one").checked;
+
+    if (asOne) {
+        downloadLinks(links);
+    } else {
+        for (let i = 0; i < links.length; i++) {
+            let apistring = convertToApi(links[i])
+            downloadLink(apistring);
+        }
+    }
+
+
+
+    // let apistring = convertToApi(inputtext)
+    // console.log(apistring)
+
+
+
+}
+
+function downloadLinks(urls) {
+    let csvcontent = "data:text/csv;charset=utf-8,";
+    let retrieved = 0;
+    for (let i = 0; i < urls.length; i++) {
+        console.log("Retrieving: " + urls[i]);
+        retrieveData(urls[i]).then(res => {
+            csvcontent += processData(res);
+            retrieved += 1;
+            console.log("Retrieved: " + urls[i]);
+        })
+    }
+
+    while (retrieved < urls.length) {
+        // wait
+    }
+
+    let encodedUri = encodeURI(csvcontent);
+    let link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", convertToFilename(urls[i]) + ".csv")
+    link.click();
+
+}
+
+function downloadLink(url) {
+    retrieveData(url).then(res => {
 
         console.log(res)
 
@@ -30,12 +76,11 @@ function download() {
         let encodedUri = encodeURI(csvcontent);
         let link = document.createElement("a");
         link.setAttribute("href", encodedUri);
-        link.setAttribute("download", convertToFilename(inputtext) + ".csv")
+        link.setAttribute("download", convertToFilename(url) + ".csv")
         link.click();
 
-        console.log(csvstring);
+        //console.log(csvstring);
     })
-
 }
 
 function processData(res) {
