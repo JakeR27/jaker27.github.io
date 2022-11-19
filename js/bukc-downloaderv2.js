@@ -1,3 +1,53 @@
+let pwds = ["jake", "joe"];
+
+window.onload = () => {
+    let curtain = document.createElement("div");
+    curtain.style.zIndex = "100";
+    curtain.style.backgroundColor = "#fff";
+    curtain.style.height = "100vh";
+    curtain.style.width = "100vw";
+    curtain.style.position = "absolute";
+    curtain.style.left = "0";
+    curtain.style.top = "0";
+    curtain.id = "hjasdasd";
+    document.body.appendChild(curtain);
+
+    let pwd = document.createElement("input");
+    pwd.style.zIndex = "200";
+    pwd.style.position = "absolute";
+    pwd.style.left = "40vw";
+    pwd.style.top = "48vh";
+    pwd.id = "kasjdkjasd";
+    document.body.appendChild(pwd);
+
+    let go = document.createElement("button");
+    go.style.zIndex = "200";
+    go.style.position = "absolute";
+    go.style.left = "47vw";
+    go.style.top = "53vh";
+    go.textContent = "Login";
+    go.id = "jkasjldaksk"
+    go.onclick = () => {
+
+        let bx = document.getElementById("kasjdkjasd");
+        console.log(bx);
+        pwds.forEach((v) => {
+            if (bx.value == v) {
+                console.log("true");
+                let pw = document.getElementById("hjasdasd");
+                let lg = document.getElementById("jkasjldaksk");
+                document.body.removeChild(pw);
+                document.body.removeChild(bx);
+                document.body.removeChild(lg);
+            }
+        })
+
+
+
+    }
+    document.body.appendChild(go);
+}
+
 function convertToApi(url) {
     console.log(url)
     const URLin = new URL(url);
