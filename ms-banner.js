@@ -5,7 +5,7 @@ let waveWidth = 12;
 let waveHeight = 3;
 
 function preload() {
-  kart = loadImage('kart_green.png');
+  kart = loadImage('/img/kart.png');
 }
 
 function setup() {
