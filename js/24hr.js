@@ -40,16 +40,21 @@ async function getCompetitorData(sessionId, competitorId) {
 function calculateStintProgress(laps) {
     let totalLaps = laps.length;
     let recentPit = 0;
+    let numberOfPits = 0;
+    let pitstopTimes = [];
 
     for (let i = totalLaps; i > 0; i--) {
         let laptime = parseInt(laps[i-1]["LapTime"])
         if (laptime > G_pitstopCutoffTime) {
-            recentPit = i;
-            break;
+            if (recentPit === 0) {
+                recentPit = i;
+            }
+            numberOfPits++;
+            pitstopTimes.push(laptime);
         }
     }
     let currentStintLaps = totalLaps - recentPit;
-    return {recentPit, currentStintLaps, totalLaps};
+    return {recentPit, currentStintLaps, totalLaps, numberOfPits, pitstopTimes};
 }
 
 function determineCompetitors() {
@@ -146,10 +151,10 @@ async function update(sessionId, competitors) {
             compdata = data;
         })
 
-        let {recentPit, currentStintLaps, totalLaps} = calculateStintProgress(compdata);
+        let {recentPit, currentStintLaps, totalLaps, numberOfPits, pitstopTimes} = calculateStintProgress(compdata);
 
         let display = document.getElementById(`${competitor.id}-lap`)
-        display.textContent = `Pitted on L${recentPit}.\r\nCurrently L${totalLaps}.\r\nStint L${currentStintLaps}`;
+        display.textContent = `Pitted on L${recentPit}.\r\nCurrently L${totalLaps}.\r\nStint (${numberOfPits+1}) L${currentStintLaps}`;
 
         // console.log(recentPit);
         // console.log(totalLaps);
