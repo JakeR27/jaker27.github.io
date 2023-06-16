@@ -22,3 +22,11 @@
 #NA-lap.lap {
     display: none;
 }
+
+.lapcontainer > div {
+    margin-top: 0.5rem;
+}
+
+.lap {
+    margin-bottom: 0.5rem;
+}
