@@ -1,12 +1,14 @@
-//const url = "https://live.alphatiming.co.uk/bukc.json";
-const url = "https://live.alphatiming.co.uk/bpec.json";
-//const compurl = "https://live.alphatiming.co.uk/bukc/competitors/"
-const compurl = "https://live.alphatiming.co.uk/bpec/competitors/"
+const url = "https://live.alphatiming.co.uk/bukc.json";
+//const url = "https://live.alphatiming.co.uk/bpec.json";
+const compurl = "https://live.alphatiming.co.uk/bukc/competitors/"
+//const compurl = "https://live.alphatiming.co.uk/bpec/competitors/"
 
 window.onload = () => {
     main();
     console.log("loaded")
 }
+
+let G_pitstopCutoffTime = 140000;
 
 async function getData(url) {
     let r;
@@ -39,13 +41,53 @@ function calculateStintProgress(laps) {
 
     for (let i = totalLaps; i > 0; i--) {
         let laptime = parseInt(laps[i-1]["LapTime"])
-        if (laptime > 70000) {
+        if (laptime > G_pitstopCutoffTime) {
             recentPit = i;
             break;
         }
     }
     let currentStintLaps = totalLaps - recentPit;
     return {recentPit, currentStintLaps, totalLaps};
+}
+
+function determineCompetitors() {
+    const teamParams = new URLSearchParams(window.location.search);
+    const team1 = teamParams.get("t1");
+    const team2 = teamParams.get("t2");
+    const team3 = teamParams.get("t3");
+    const team4 = teamParams.get("t4");
+
+    let trackedCompetitors = [];
+
+    if (team1 != null) {
+        trackedCompetitors.push(team1);
+    }
+
+    if (team2 != null) {
+        trackedCompetitors.push(team2);
+    }
+
+    if (team3 != null) {
+        trackedCompetitors.push(team3);
+    }
+
+    if (team4 != null) {
+        trackedCompetitors.push(team4);
+    }
+
+    if (trackedCompetitors.length === 0) {
+        trackedCompetitors = ["Landow Nunder", "Bohemian BAPsody", "Lewis White and the 11 back markers"];
+    }
+    return trackedCompetitors;
+}
+
+function determinePitstopTime() {
+    const teamParams = new URLSearchParams(window.location.search);
+
+    const pitstopTime = teamParams.get("pst");
+    if (pitstopTime != null) {
+        G_pitstopCutoffTime = parseInt(pitstopTime);
+    }
 }
 
 // returns an object with sessionId and competitorIds
@@ -62,12 +104,14 @@ async function setup() {
     //console.log(sessionId);
     //console.log(competitors);
 
-    let trackedCompetitors = ["Llandow Nunder", "Bohemian BAPsody", "Lewis White and the 11 back markers"];
+    determinePitstopTime();
+    let trackedCompetitors = determineCompetitors();
+
     let returnData = {};
     returnData.competitors = [];
 
     //trackedCompetitors = ["test 1", "test 2", "test 3"]
-    trackedCompetitors = ["Team Tate", "MS JSR", "Red Racing"]
+    //trackedCompetitors = ["Team Tate", "MS JSR", "Red Racing"]
 
     for (let competitor of competitors) {
         //console.log(competitor["CompetitorName"])
