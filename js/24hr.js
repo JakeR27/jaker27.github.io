@@ -90,7 +90,7 @@ function determineCompetitors() {
     let style = document.createElement("style");
     style.innerHTML = `
     .lapcontainer {
-      max-width: ${Math.floor(100/trackedCompetitors.length)}
+      max-width: ${Math.floor(100/trackedCompetitors.length)}vw
     }
     `
     document.head.appendChild(style);
