@@ -9,6 +9,7 @@ window.onload = () => {
 }
 
 let G_pitstopCutoffTime = 140000;
+let G_showPitstops = false;
 
 async function getData(url) {
     let r;
@@ -88,12 +89,17 @@ function determineCompetitors() {
     return trackedCompetitors;
 }
 
-function determinePitstopTime() {
+function determineParameters() {
     const teamParams = new URLSearchParams(window.location.search);
 
     const pitstopTime = teamParams.get("pst");
     if (pitstopTime != null) {
         G_pitstopCutoffTime = parseInt(pitstopTime);
+    }
+
+    const showPitstops = teamParams.get("showpst");
+    if (showPitstops != null) {
+        G_showPitstops = true;
     }
 }
 
@@ -111,7 +117,7 @@ async function setup() {
     //console.log(sessionId);
     //console.log(competitors);
 
-    determinePitstopTime();
+    determineParameters();
     let trackedCompetitors = determineCompetitors();
 
     let returnData = {};
@@ -156,6 +162,19 @@ async function update(sessionId, competitors) {
         let display = document.getElementById(`${competitor.id}-lap`)
         display.textContent = `Pitted on L${recentPit}.\r\nCurrently L${totalLaps}.\r\nStint (${numberOfPits+1}) L${currentStintLaps}`;
 
+        let pitstops = document.getElementById(`${competitor.id}-pitstops`);
+        pitstops.innerHTML = "";
+
+        let ul = document.createElement("ul");
+
+        let i = 0;
+        for (let pitstop of pitstopTimes) {
+            let li = document.createElement("li");
+            li.textContent = `P${++i} ${Math.floor(pitstop/60000)}:${(pitstop%60000)/1000}`;
+            ul.appendChild(li);
+        }
+        pitstops.appendChild(ul);
+
         // console.log(recentPit);
         // console.log(totalLaps);
         // console.log(currentStintLaps);
@@ -175,6 +194,7 @@ async function main() {
         let container = document.createElement("div");
         let label = document.createElement("p");
         let lap = document.createElement("p");
+        let pitstop = document.createElement("div");
 
         container.classList.add("lapcontainer");
         container.id = competitors[i]["id"];
@@ -182,12 +202,17 @@ async function main() {
         label.classList.add("label")
         lap.classList.add("lap");
         lap.id = `${competitors[i]["id"]}-lap`
+        pitstop.id = `${competitors[i]["id"]}-pitstops`
 
 
         //console.log(competitors[i]["name"]);
 
         container.appendChild(label);
         container.appendChild(lap);
+        if (G_showPitstops) {
+            container.appendChild(pitstop);
+        }
+
         //document.body.appendChild(container);
         document.getElementById("meta").appendChild(container);
 
