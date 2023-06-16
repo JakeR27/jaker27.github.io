@@ -3,6 +3,11 @@ const url = "https://live.alphatiming.co.uk/bukc.json";
 const compurl = "https://live.alphatiming.co.uk/bukc/competitors/"
 //const compurl = "https://live.alphatiming.co.uk/bpec/competitors/"
 
+const Astints = ["Kieran", "Dent", "Adam", "Will", "Alex", "Jake", "Jack", "Henry", "Kurt", "Brad", "Alex", "Jake", "Jack", "Henry"];
+const Bstints = ["Middleton", "Cook", "Dan", "Ed", "Atkinson", "Erlam", "Milnes", "Blyth", "Elliott", "Heath", "Roman", "Spalton", "Atkinson", "Dan", "Middleton", "Milnes"]
+const Cstints = ["Igor", "Kamran", "Adrian", "Luke", "Nicky", "Adrian", "Semir", "Igor", "Kamran", "Freya", "Anand", "Semir", "Vilius", "Vasalisa", "Rob", "Lewis"];
+const Pstints = ["Kane", "Michael", "Ocean", "Kieran", "Tom", "Sam", "Will", "Kane", "Michael", "Ocean", "Kieran", "Tom", "Sam", "Will", "Kane"];
+
 window.onload = () => {
     main();
     console.log("loaded")
@@ -10,6 +15,8 @@ window.onload = () => {
 
 let G_pitstopCutoffTime = 140000;
 let G_showPitstops = false;
+let G_competitorMap = {};
+let G_helperOffset = 0;
 
 async function getData(url) {
     let r;
@@ -110,6 +117,42 @@ function determineParameters() {
     if (showPitstops != null) {
         G_showPitstops = true;
     }
+
+    const helperOffset = teamParams.get("hd");
+    if (helperOffset != null) {
+        G_helperOffset = parseInt(helperOffset);
+    }
+}
+
+function determineHelpers(competitorId, stintNumber) {
+    let helpers;
+
+    switch(G_competitorMap[competitorId]) {
+        case "Landow Nunder": {
+            helpers = Astints;
+            break;
+        }
+        case "Bohemian BAPsody": {
+            helpers = Bstints;
+            break;
+        }
+        case "Lewis white and the 11 back markers": {
+            helpers = Cstints;
+            break;
+        }
+        case "Speedophiles": {
+            helpers = Pstints;
+            break;
+        }
+        default: {
+            helpers = Pstints;
+            break;
+        }
+    }
+
+    let max = helpers.length;
+
+    return [helpers[stintNumber+1+G_helperOffset % max], helpers[(stintNumber+2+G_helperOffset) % max]]
 }
 
 // returns an object with sessionId and competitorIds
@@ -145,6 +188,7 @@ async function setup() {
                 //console.log("match")
                 returnData.competitors.push({"name":competitor["CompetitorName"],"id": competitor["CompetitorId"]});
                 tempDict[trackedCompetitor] = 1;
+                G_competitorMap[competitor["CompetitorId"]] = trackedCompetitor;
             }
         }
     }
@@ -173,6 +217,10 @@ async function update(sessionId, competitors) {
 
         let pitstops = document.getElementById(`${competitor.id}-pitstops`);
         pitstops.innerHTML = "";
+
+        let helpers = document.getElementById(`${competitor.id}-helpers`);
+        let text = determineHelpers(competitor.id, numberOfPits);
+        helpers.textContent = `Helpers: ${text[0]}, ${text[1]}`;
 
         let ul = document.createElement("ul");
 
@@ -204,6 +252,7 @@ async function main() {
         let label = document.createElement("p");
         let lap = document.createElement("p");
         let pitstop = document.createElement("div");
+        let helper = document.createElement("p")
 
         container.classList.add("lapcontainer");
         container.id = competitors[i]["id"];
@@ -212,12 +261,14 @@ async function main() {
         lap.classList.add("lap");
         lap.id = `${competitors[i]["id"]}-lap`
         pitstop.id = `${competitors[i]["id"]}-pitstops`
+        helper.id = `${competitors[i]["id"]}-helpers`
 
 
         //console.log(competitors[i]["name"]);
 
         container.appendChild(label);
         container.appendChild(lap);
+        container.appendChild(helper);
         if (G_showPitstops) {
             container.appendChild(pitstop);
         }
