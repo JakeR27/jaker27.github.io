@@ -86,6 +86,15 @@ function determineCompetitors() {
     if (trackedCompetitors.length === 0) {
         trackedCompetitors = ["Landow Nunder", "Bohemian BAPsody", "Lewis White and the 11 back markers"];
     }
+
+    let style = document.createElement("style");
+    style.innerHTML = `
+    .lapcontainer {
+      max-width: ${Math.floor(100/trackedCompetitors.length)}
+    }
+    `
+    document.head.appendChild(style);
+
     return trackedCompetitors;
 }
 
