@@ -25,6 +25,8 @@ function getCompetitors(data) {
 }
 
 async function getCompetitorData(sessionId, competitorId) {
+    if (!Number.isInteger(competitorId)) return (0, 0, 0);
+
     const thisurl = compurl + `${competitorId}.json?session_id=${sessionId}`
     let compdata;
     await getData(thisurl).then(
@@ -113,6 +115,8 @@ async function setup() {
     //trackedCompetitors = ["test 1", "test 2", "test 3"]
     //trackedCompetitors = ["Team Tate", "MS JSR", "Red Racing"]
 
+    let tempDict = {};
+
     for (let competitor of competitors) {
         //console.log(competitor["CompetitorName"])
 
@@ -120,9 +124,17 @@ async function setup() {
             if (competitor["CompetitorName"] === trackedCompetitor) {
                 //console.log("match")
                 returnData.competitors.push({"name":competitor["CompetitorName"],"id": competitor["CompetitorId"]});
+                tempDict[trackedCompetitor] = 1;
             }
         }
     }
+
+    for (let trackedCompetitor of trackedCompetitors) {
+        if (!tempDict[trackedCompetitor]) {
+            returnData.competitors.push({"name":trackedCompetitor, "id": "NA"})
+        }
+    }
+
     returnData.sessionId = sessionId;
     return returnData;
 }
