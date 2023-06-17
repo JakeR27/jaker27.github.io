@@ -127,6 +127,8 @@ function determineParameters() {
 function determineHelpers(competitorId, stintNumber) {
     let helpers;
 
+    console.log(G_competitorMap);
+
     switch(G_competitorMap[competitorId]) {
         case "Landow Nunder": {
             helpers = Astints;
@@ -215,22 +217,26 @@ async function update(sessionId, competitors) {
         let display = document.getElementById(`${competitor.id}-lap`)
         display.textContent = `Pitted on L${recentPit}.\r\nCurrently L${totalLaps}.\r\nStint (${numberOfPits+1}) L${currentStintLaps}`;
 
-        let pitstops = document.getElementById(`${competitor.id}-pitstops`);
-        pitstops.innerHTML = "";
+        if (G_showPitstops) {
+            let pitstops = document.getElementById(`${competitor.id}-pitstops`);
+            pitstops.innerHTML = "";
+
+            let ul = document.createElement("ul");
+
+            let i = 0;
+            for (let pitstop of pitstopTimes) {
+                let li = document.createElement("li");
+                li.textContent = `P${++i} ${Math.floor(pitstop/60000)}:${(pitstop%60000)/1000}`;
+                ul.appendChild(li);
+            }
+            pitstops.appendChild(ul);
+        }
 
         let helpers = document.getElementById(`${competitor.id}-helpers`);
         let text = determineHelpers(competitor.id, numberOfPits);
         helpers.textContent = `Helpers: ${text[0]}, ${text[1]}`;
 
-        let ul = document.createElement("ul");
 
-        let i = 0;
-        for (let pitstop of pitstopTimes) {
-            let li = document.createElement("li");
-            li.textContent = `P${++i} ${Math.floor(pitstop/60000)}:${(pitstop%60000)/1000}`;
-            ul.appendChild(li);
-        }
-        pitstops.appendChild(ul);
 
         // console.log(recentPit);
         // console.log(totalLaps);
