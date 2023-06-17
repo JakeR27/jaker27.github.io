@@ -138,7 +138,7 @@ function determineHelpers(competitorId, stintNumber) {
             helpers = Bstints;
             break;
         }
-        case "Lewis white and the 11 back markers": {
+        case "Lewis White and the 11 back markers": {
             helpers = Cstints;
             break;
         }
