@@ -1,0 +1,32 @@
+#meta {
+    height: auto;
+    background-color: #333333;
+    display: flex;
+    flex-flow: row;
+}
+
+.lapcontainer {
+
+    flex-grow: 1;
+    color: #eeeeee;
+    font-family: 'Open Sans', Tahoma, Verdana, Segoe, sans-serif;
+    text-align: center;
+    border: 1px solid #111;
+    font-size: 24pt;
+}
+
+#NA {
+    background-color: #dd5555;
+}
+
+#NA-lap.lap {
+    display: none;
+}
+
+.lapcontainer > div {
+    margin-top: 0.5rem;
+}
+
+.lap {
+    margin-bottom: 0.5rem;
+}
