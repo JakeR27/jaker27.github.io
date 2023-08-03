@@ -3,6 +3,13 @@
     --main-grip-horizontal-gap: 6rem;
     --section-grid-gap: 1rem;
     --grid-gap: 2rem;
+    --color2: #f58231;
+    --color1: #3cb44b;
+    --color3: #4363d8;
+    --color4: #f032e6;
+    --color-bg: #333;
+    --color-fg: #f6eee5;
+    --color-accent: #FF4E36;
 }
 
 ul {
@@ -12,8 +19,8 @@ ul {
 
 body {
     margin: 0;
-    background: #515151;
-    color: #eee;
+    background: var(--color-bg);
+    color: var(--color-fg);
     font-family: "Raleway", sans-serif
 }
 
@@ -37,7 +44,7 @@ section {
     width: 100%;
 }
 
-section > h1 {
+section > :is(h1, h2, h3) {
     margin-top: 0;
 }
 
@@ -52,6 +59,7 @@ main {
 summary {
     cursor: pointer;
     width: auto;
+    list-style-type: none;
 }
 
 summary > * {
@@ -69,6 +77,12 @@ summary > * {
     width: 450px;
 }
 
+details {
+    border-radius: 5px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
 
 @media (max-width: 1399px) {
     :root {
@@ -76,10 +90,15 @@ summary > * {
     }
 }
 
-@media (max-width: 963px) {
+@media (max-width: 1050px) {
     .modules > details {
         margin-top: 1rem;
         flex-grow: 1;
+    }
+    .header {
+        flex-direction: column !important;
+        align-items: center;
+        text-align: center  ;
     }
 }
 
@@ -91,13 +110,13 @@ li > p {
 }
 
 li {
-    border: 1px solid;
-    border-radius: 5px;
+    /*border: 1px solid;*/
+    /*border-radius: 5px;*/
     /*padding: 4px;*/
     margin: 10px;
     --module-color: #fff;
-    background-color: color-mix(in srgb, var(--module-color) 85%, black);
-    border-color: var(--module-color);
+    /*background-color: color-mix(in srgb, var(--module-color) 85%, black);*/
+    /*border-color: var(--module-color);*/
 }
 
 progress {
@@ -110,7 +129,7 @@ progress {
 }
 
 progress::-webkit-progress-bar {
-    background-color: color-mix(in srgb, var(--module-color) 85%, black);
+    background-color: color-mix(in srgb, var(--module-color) 75%, black);
     border-radius: 5px;
 }
 
@@ -120,7 +139,7 @@ progress::-webkit-progress-value {
 }
 
 li.theory {
-    --module-color: #2196F3;
+    --module-color: var(--color1);
 }
 
 :is(li.solo.theory, li.theory) > p::before {
@@ -132,7 +151,7 @@ li.group.theory > p::before {
 }
 
 li.practical {
-    --module-color: #FF9800;
+    --module-color: var(--color2);
 }
 
 :is(li.solo.practical, li.practical) > p::before {
@@ -144,7 +163,7 @@ li.group.practical > p::before {
 }
 
 li.research {
-    --module-color: #ff6294;
+    --module-color: var(--color3);
 }
 
 :is(li.solo.research, li.research) > p::before {
@@ -156,7 +175,7 @@ li.group.research > p::before {
 }
 
 li.maths {
-    --module-color: #F44336;
+    --module-color: var(--color4);
 }
 
 :is(li.solo.maths, li.maths) > p::before {
@@ -171,7 +190,7 @@ li.group.maths > p::before {
 li p {
     position: absolute;
     display: inline-block;
-    color: #fff;
+    color: var(--color-fg);
     text-align: right;
 }
 
@@ -189,6 +208,34 @@ h1 {
     font-size: 28pt;
 }
 
-.header > span {
-    color: #ff4e36;
+.header {
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+}
+
+.header span {
+    color: var(--color-accent);
+    font-weight: 900;
+}
+
+:is(h1, h2, h3) span {
+    color: var(--color-accent);
+}
+
+#media-links {
+    display:flex;
+    flex-direction: row;
+}
+
+#media-links div * {
+    margin: 0 1rem 0 1rem;
+    height: 64px;
+    width: 64px;
+    transition: transform 0.1s;
+    filter: brightness(0) saturate(100%) invert(99%) sepia(7%) saturate(183%) hue-rotate(73deg) brightness(110%) contrast(87%);
+}
+
+#media-links div a img:hover {
+    scale: 1.1;
 }
