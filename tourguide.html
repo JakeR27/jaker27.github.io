@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>AJ Tours</title>
+        <script src="tourguide-cookies.js"></script>
+        <script src="tourguide-access.js"></script>
+        <script src="tourguide.js"></script>
+        <link rel="stylesheet" href="tourguide.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+    </head>
+    <body class="cc">
+        <div class="main">
+            <h1 id="title">AJ Tour Guides</h1>
+            <div class="access hidden" id="access">
+                <h2>Access your tours</h2>
+                <label for="key">Please enter your tour code</label>
+                <input id="key" name="key" type="text" placeholder="Tour Code...">
+                <button id="confirm">Confirm</button>
+            </div>
+            <div class="upcoming hidden" id="upcoming">
+                <h2>Upcoming tours</h2>
+                <div class="tour" id="tour">
+                    <div class="data" id="data">
+                        <h3 class="tour-name" id="tour-name">Tour Name</h3>
+                        <div id="dt">
+                            <p class="tour-dt" id="tour-start">Start</p>
+                            <p>To</p>
+                            <p class="tour-dt" id="tour-end">End</p>
+                        </div>
+
+                        <p class="tour-location" id="tour-location">Tour Location</p>
+                        <p class="tour-description" id="tour-description">Tour Description</p>
+                    </div>
+                    <div class="control">
+                        <p class="tour-page-indicator">1</p>
+                        <button id="prev" class="tour-control">Prev</button>
+                        <p class="tour-page-indicator" id="current-tour-page">1</p>
+                        <button id="next" class="tour-control">Next</button>
+                        <p class="tour-page-indicator" id="total-tour-page">1</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </body>
+</html>

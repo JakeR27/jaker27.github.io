@@ -1,0 +1,105 @@
+* {
+    /*outline: 1px solid red;*/
+    margin: 0;
+    padding: 0;
+    font-family: 'Young Serif', serif;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 1fr 3fr 3fr 1fr;
+    gap: 1rem;
+}
+
+#title {
+    grid-column: 2;
+    grid-row: 2;
+    margin: auto;
+    font-size: 48pt;
+}
+
+#access, #upcoming {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#access {
+    display: grid;
+}
+
+#upcoming {
+    display: grid;
+    text-align: center;
+    grid-template-rows: 1fr 1fr 5fr;
+}
+
+#tour {
+    grid-row: 3;
+    display: grid;
+    grid-template-rows: 4fr 1fr;
+}
+
+#data {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+#dt {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.control {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin: auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+html, body {
+    background: white;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+.cc {
+    -webkit-animation-name: animation;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-play-state: running;
+
+    animation-name: animation;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    background-color: #f00;
+}
+
+:root {
+    --anim-color-1: hsl(0, 75%, 80%);
+    --anim-color-2: hsl(120, 75%, 80%);
+    --anim-color-3: hsl(240, 75%, 80%);
+}
+
+@-webkit-keyframes animation {
+    0%     {background-color: var(--anim-color-1);}
+    33.0%  {background-color: var(--anim-color-2);}
+    66.0%  {background-color: var(--anim-color-3);}
+    100.0% {background-color: var(--anim-color-1);}
+}
+
+@keyframes animation {
+    0%     {background-color: var(--anim-color-1);}
+    33.0%  {background-color: var(--anim-color-2);}
+    66.0%  {background-color: var(--anim-color-3);}
+    100.0% {background-color: var(--anim-color-1);}
+}
