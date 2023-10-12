@@ -174,6 +174,10 @@ function displayCurrentEvent() {
         avatar.src = "tatj.png";
     }
 
+    let pg = document.getElementById("progress");
+    pg.max = eventObjects.length-1;
+    pg.value = currentEventIndex;
+
     let rootStyle = document.querySelector(":root");
     let c = cyrb128(event.uid)[0] % 256;
 
