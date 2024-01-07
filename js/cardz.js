@@ -62,6 +62,7 @@ function newPlayer(name) {
 function start() {
     currentPlayerNum = 0;
     commandsInPlay = JSON.parse(JSON.stringify(commands));
+    started = true;
     setCard(new Command("Welcome to the game", "The game is simple. You will be given a card. You and your partner must complete the card. Failing to complete a card may reward your partner with a task. The task has the same limit as the original card. Try to match the difficulty of the task with the levels below:<br><br> Pink - Easy<br>Purple - Medium<br>Red - Hard", "none", "watch touch talk", "mild"))
 }
 
