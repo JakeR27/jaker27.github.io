@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cardz</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/cardz.css">
+</head>
+<body class="bg-dark" data-bs-theme="dark">
+<div id="blocker" class="position-absolute z-1 w-100 vh-100 d-flex align-items-center justify-content-center bg-secondary flex-column">
+    <div id="p1-input" class="my-2">
+        <label class="mx-2" for="p1">Player A:</label>
+        <input type="text" name="p1" id="p1" class="mx-2">
+    </div>
+    <div id="p2-input" class="my-2">
+        <label class="mx-2" for="p2">Player B:</label>
+        <input type="text" name="p1" id="p2" class="mx-2">
+    </div>
+    <div id="blocker-input" class="d-flex align-items-center justify-content-center my-2 mt-4">
+        <label class="mx-2" for="pass">Password:</label>
+        <input type="text" name="pass" id="pass" class="mx-2">
+    </div>
+    <button class="btn bg-secondary-subtle mx-2 my-2 w-50" type="button" onclick="checkPass()">Submit</button>
+
+</div>
+<div class="container vh-100 py-3">
+    <div id="card" class="card text-center w-100 h-100 border-5">
+        <div id="header" style="height:6rem;" class="card-header border-0 rounded-0 d-flex align-items-center justify-content-center">
+            <h1><span id="player">Jake</span>'s Turn</h1>
+        </div>
+        <div id="body" class="card-body rounded d-flex flex-column align-items-center justify-content-between">
+            <div>
+                <span id="command-action-icon">H</span>
+            </div>
+            <h1 id="command-title" class="card-title d-flex font-monospace">Title</h1>
+            <p id="command-desc" class="card-text">Description.</p>
+            <div class="d-flex align-items-center">
+                <span class="d-flex align-items-center" id="command-limit-icon"></span>
+                <p class="my-0 mx-2" id="command-limit">Limit goes here</p>
+            </div>
+
+        </div>
+        <div id="footer" style="height:6rem;" class="card-footer text-body-secondary rounded-0 d-flex align-items-center justify-content-center">
+            <img style="height:4rem;" src="img/flame.svg" alt="">
+        </div>
+    </div>
+</div>
+<!--<div class="p-5 bg-warning rounded position-absolute bottom-0 end-0">-->
+<!--    <button onclick="setNewDifficulty('mild')">MILD</button>-->
+<!--    <button onclick="setNewDifficulty('moderate')">MOD</button>-->
+<!--    <button onclick="setNewDifficulty('hot')">HOT</button>-->
+<!--    <button onclick="nextCard()">NEXT</button>-->
+<!--    <button onclick="reset();start();newPlayer('A');newPlayer('B')">setup</button>-->
+<!--</div>-->
+<script src="js/cardz.js"></script>
+<script src="js/cardz-data-obfuscated.js"></script>
+</body>
+</html>
