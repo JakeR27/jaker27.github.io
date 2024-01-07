@@ -1,0 +1,60 @@
+.bg-mild {
+    background-color: #A14C91 ;
+}
+
+.bg-mild-subtle {
+    background-color: #db67c6;
+}
+
+.border-mild {
+    border-color: #A14C91;
+}
+
+.svg-mild {
+    filter: invert(36%) sepia(38%) saturate(882%) hue-rotate(259deg) brightness(93%) contrast(85%);
+}
+
+.svg-mild-subtle {
+    filter: invert(61%) sepia(96%) saturate(1428%) hue-rotate(279deg) brightness(91%) contrast(88%);
+}
+
+
+.bg-moderate {
+    background-color: #724CA1;
+}
+
+.bg-moderate-subtle {
+    background-color: #9b67db;
+}
+
+.border-moderate {
+    border-color: #724CA1;
+}
+
+.svg-moderate {
+    filter: invert(35%) sepia(10%) saturate(3383%) hue-rotate(225deg) brightness(93%) contrast(88%);
+}
+
+.svg-moderate-subtle {
+    filter: invert(55%) sepia(55%) saturate(3683%) hue-rotate(230deg) brightness(89%) contrast(92%);
+}
+
+.bg-hot {
+    background-color: #A14C5E;
+}
+
+.bg-hot-subtle {
+    background-color: #db6780;
+}
+
+.border-hot {
+    border-color: #A14C5E;
+}
+
+.svg-hot {
+    filter: invert(35%) sepia(55%) saturate(523%) hue-rotate(297deg) brightness(92%) contrast(90%);
+}
+
+.svg-hot-subtle {
+    filter: invert(63%) sepia(15%) saturate(4012%) hue-rotate(305deg) brightness(90%) contrast(90%);
+}
