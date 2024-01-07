@@ -41,8 +41,9 @@ let started = false;
 document.addEventListener("touchend", touchHandler, false);
 
 function touchHandler(ev) {
+    console.log("touch")
     if (!started) return;
-
+    console.log("nextcard");
     nextCard();
 }
 
