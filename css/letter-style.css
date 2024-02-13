@@ -1,0 +1,161 @@
+body {
+  background-color: #ddd;
+  margin: 10px;
+}
+
+.letter {
+  background-color: #fff;
+  max-width: min(100%, 1000px);
+  font-size: 24pt;
+
+  margin: 0 auto;
+
+  border: 1px solid var(--line-rule-color);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+  --line-height: 1.2em;
+  --line-rule-color: #d1d5db;
+  --shadow-strength: 5px;
+  --content-padding: 2em;
+}
+
+.header {
+  margin-top: calc(var(--line-height) /2);
+  --line-height: 2em;
+  display: flex;
+  justify-content: space-between;
+
+  --line-rule-color: rgba(221, 85, 85, 0.53); /* red color */
+}
+
+.header * {
+  margin-top: 0;
+  margin-bottom: 0;
+  display: inline;
+}
+
+.header {
+  margin-right: auto;
+}
+
+.lined {
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+
+  background-image: linear-gradient(var(--line-rule-color) 2px, transparent 0px);
+  background-size: 100% var(--line-height);
+
+  background-position-y: calc( 0.75 * var(--line-height));
+  line-height: var(--line-height);
+
+  padding: 0 calc(var(--content-padding) * 1.5);
+}
+
+.lined p {
+  margin-top: 0;
+  margin-bottom: var(--line-height);
+}
+
+.signature {
+  font-family: "Dancing Script", cursive;
+  font-size: 36pt;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+@media (max-width: 600px) {
+  .letter {
+    --content-padding: 0.5em;
+    font-size: 18pt;
+  }
+  .header {
+    margin-top: calc(var(--line-height));
+  }
+
+  .envelope {
+    --hovered: 1 !important;
+  }
+  .envelope p::after {
+    content: "\A~~~~~~\A~~~~~~"
+  }
+}
+
+.mt-5 {
+  margin-top: 5em !important;
+}
+
+.mb-5 {
+  margin-bottom: 5em !important;
+}
+
+.envelope-container {
+  max-width: min(100%, 1000px);
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.envelope {
+  width: 8em;
+  height: var(--height);
+
+  margin: min(var(--movement-down), 2em);
+  --hovered: 0;
+  --movement-down: 2em;
+  --height: 10em;
+}
+
+.envelope svg {
+  width: 8em;
+  height: 100%;
+  scale: 1.5;
+  fill: #ffffff;
+
+  transform: translateY(calc(var(--hovered) * var(--movement-down)));
+  transition: transform 0.5s;
+}
+
+.envelope:hover {
+  cursor: pointer;
+
+  --hovered: 1;
+}
+
+.envelope p {
+  position: relative;
+  top: calc((var(--height) - 4.2em) * -1);
+  height: calc(1em + (var(--hovered) * 3em));
+  transform: translateY(calc(var(--hovered) * -0.5 * var(--movement-down)));
+
+  transition: transform 0.5s, height 0.5s;
+
+  border-top: 0.5rem solid black;
+  border-left: 0.5rem solid black;
+  border-right: 0.5rem solid black;
+  border-radius: 0.25em 0.25em 0 0;
+
+  background-color: #ffffff;
+
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 1.5em;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.envelope:hover p {
+  overflow: visible;
+}
+
+.envelope:hover p::after {
+  content: "\A~~~~~~"
+}
+
+
