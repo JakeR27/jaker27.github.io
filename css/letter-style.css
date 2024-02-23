@@ -67,6 +67,18 @@ body {
   text-decoration: line-through;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
+.author-jake {
+  fill: rgb(220, 140, 50) !important;
+}
+
+.author-abby {
+  fill: rgb(200, 150, 200) !important;
+}
+
 @media (max-width: 600px) {
   .letter {
     --content-padding: 0.5em;
