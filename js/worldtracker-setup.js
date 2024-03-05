@@ -6,6 +6,7 @@ function createMap() {
     map = L.map('map').setView([53.8, -1.55], 12);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        detectRetina: true,
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
