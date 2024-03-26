@@ -2,32 +2,57 @@ const PLACES = [
     {
         type: Categories.HOME,
         latitude: 53.81030, longitude: -1.57441,
-        info: "<b>3 Beamsley Terrace, LS61LP</b><br>Jake's 3rd & 4th year university house"
+        title: "3 Beamsley Terrace, LS61LP",
+        description: "Jake's 3rd & 4th year university house",
+        visits: [
+            {date: "30/06/2024", info: "Move out"},
+            {date: "01/07/2022", info: "Move in"},
+        ],
     },
     {
         type: Categories.HOME,
         latitude: 54.99161,
         longitude: -1.6108,
-        info: "<b>33 Forsyth Road</b><br>Abby's 3rd year university house"
+        title: "33 Forsyth Road, NE23DB",
+        description: "Abby's 3rd year university house",
+        visits: [
+            {date: "30/06/2024", info: "Move out (ish)"},
+            {date: "01/07/2023", info: "Move in (ish)"},
+        ],
     },
     {
         type: Categories.ACTIVITY,
         latitude: 51.33435,
         longitude: 0.50568,
-        info: "<b>Buckmore Kart Circuit</b><br>2024 BUKC Round 2",
+        title: "Buckmore Kart Circuit, ME59QG",
+        description: "Karting Track",
+        visits: [
+            {date: "15/02/2024", info: "BUKC Round 2 Inters - Watching"},
+            {date: "14/02/2024", info: "BUKC Round 2 Mains - Racing"},
+        ],
         icon: kartingIcon
     },
     {
         type: Categories.STAYOVER,
         latitude: 51.37627,
         longitude: 0.47478,
-        info: "<b>Travelodge Medway M2</b><br>2024 BUKC Round 2",
+        title: "Travelodge Medway M2, ME88PQ",
+        description: "Travelodge",
+        visits: [
+            {date: "14/02/2024", info: "Night before BUKC Round 2 Inters - Watching"},
+            {date: "13/02/2024", info: "Night before BUKC Round 2 Mains - Racing"},
+        ],
         icon: cheapHotelIcon
     },
     {
         type: Categories.TRANSPORT,
         latitude: 54.77975, longitude: -1.58151,
         info: "<b>Durham Train Station</b><br> Lumiere Light Festival <br/> 2023",
+        title: "Durham Train Station",
+        description: "National Rail Station",
+        visits: [
+            {date: "16/11/2023", info: "Lumiere Light Festival"},
+        ],
         icon: trainIcon
     },
     {
