@@ -99,7 +99,20 @@ function zoomCallback() {
 
 function mapSavedPlaces() {
     for (let place of PLACES) {
-        mapPoint(map, place.type, {lat: place.latitude, long: place.longitude}, place.info, place.icon);
+
+        let popupData = "";
+        popupData += `<b>${place.title ?? "MISSING TITLE"}</b><br>`;
+        popupData += `${place.description ?? "MISSING DESC"}`;
+
+        if (place.visits && place.visits.length > 0) {
+            popupData += "<ul>";
+            for (let visit of place.visits) {
+                popupData += `<li>${visit.date}: ${visit.info}</li>`;
+            }
+            popupData += "</ul>";
+        }
+
+        mapPoint(map, place.type, {lat: place.latitude, long: place.longitude}, popupData, place.icon);
     }
 }
 
