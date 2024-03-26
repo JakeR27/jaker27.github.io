@@ -13,3 +13,11 @@ body {
 .info h4 {
     margin: 0 0 5px;
 }
+
+img {
+    image-rendering: high-quality;
+}
+
+ul {
+    padding-inline-start: 1em;
+}
