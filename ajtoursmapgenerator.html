@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Place Generator</title>
+    <!-- Un-Minified version -->
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css"
+    />
+    <style>
+        .page {
+            padding: 5rem;
+            --right-size: min(50vw, 600px);
+            display: grid;
+            grid-template-columns: calc(99vw - 10rem - var(--right-size)) var(--right-size);
+            grid-template-rows: auto;
+            grid-template-areas: "left right";
+            column-gap: 1rem;
+
+        }
+        .entry {
+            grid-area: left;
+        }
+        .result {
+            grid-area: right;
+        }
+        label {
+            display:block;
+        }
+        .result > textarea {
+            width: 100%;
+            height: calc(90svh - 10rem);
+        }
+        .group > * {
+            display: inline;
+            width: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="entry">
+            <form onsubmit="nothing()">
+                <select name="type" id="type">
+                    <option selected disabled>SELECT TYPE</option>
+                    <option value="0">UNKNOWN</option>
+                    <option value="1">HOME</option>
+                    <option value="2">ACTIVITY</option>
+                    <option value="3">STAYOVER</option>
+                    <option value="4">VISIT</option>
+                    <option value="5">TRANSPORT</option>
+                    <option value="6">TRANSPORT_LOCAL</option>
+                </select>
+                <fieldset role="group">
+                    <input type="number" name="lat" id="lat" placeholder="Latitude...">
+                    <input type="number" name="long" id="long" placeholder="Longitude...">
+                </fieldset>
+                <input type="text" name="title" id="title" placeholder="Title...">
+                <input type="text" name="desc" id="desc" placeholder="Description...">
+                <label for="visits">Visits</label>
+                <textarea name="visits" id="visits" rows="8"></textarea>
+                <fieldset role="group">
+                    <button type="button" onclick="add()" class="pico-background-green-200">Add</button>
+                    <button onclick="clear()" class="pico-background-red-200">Clear</button>
+                    <button onclick="add();clear();" class="pico-background-amber-200">Add & Clear</button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="result">
+            <fieldset role="group">
+                <input type="text" name="lblplaces" id="lblplaces" disabled placeholder="places.js">
+                <button>Save</button>
+            </fieldset>
+
+            <textarea name="places" id="places"></textarea>
+        </div>
+    </div>
+
+    <script src="js/worldtracker-placegenerator.js"></script>
+</body>
+</html>

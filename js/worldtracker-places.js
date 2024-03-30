@@ -47,7 +47,6 @@ const PLACES = [
     {
         type: Categories.TRANSPORT,
         latitude: 54.77975, longitude: -1.58151,
-        info: "<b>Durham Train Station</b><br> Lumiere Light Festival <br/> 2023",
         title: "Durham Train Station",
         description: "National Rail Station",
         visits: [
