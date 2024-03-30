@@ -18,6 +18,22 @@ letters.push({
 })
 letters.push({
     id: 1,
+    title: "ABBY TO DECIDE",
+    date: "?",
+    content: [
+        "Firstly, I would like to thank you for the letter. It means a lot to me and I really appreciate the effort you've been putting in. You have made me feel very happy.",
+        "I have really enjoyed the time we've spent together, everything seems easy with you and our tour guides just fly by. I love that we can chat the most shit but also have deeper conversations.",
+        "I'm glad that we had that chat. I think it was the first time we'd both been honest about how feel feel. I'm sure you know that I do have some reservations when it comes to trusting you. However, hearing the way you talk about me does make me think this could go somewhere.",
+        "I really like how motivated and driven you are and love listening to you talk about your passions. You might be a little bit funny but obviously not as funny as me :)",
+        "Would definitely like to see you again soon."
+    ],
+    signoff: "Nearly yours,",
+    signature: "Abby x",
+    ps: "P.S. Why did people stop writing letters, this is so fun.",
+    author: "abby",
+})
+letters.push({
+    id: 2,
     title: "Girlfriend 😮",
     date: "02/10/23",
     content: [
@@ -31,7 +47,23 @@ letters.push({
     author: "jake"
 })
 letters.push({
-    id: 2,
+    id: 3,
+    title: "ABBY TO DECIDE",
+    date: "?",
+    content: [
+        "Dear Jake",
+        "You are officially no longer on opened! I knew there would be a perfect time to send this letter. It seems like forever since I lat saw you and until I next see you!",
+        "I have missed you lots and our tour guides. I've figured out the bus route and walk to Harewood House, thinking we could go when I'm in Leeds? Also the 1<sup>st</sup>/2<sup>nd</sup> is basically Christmas so prepare for my Christmas excitement :)",
+        "Still working on the Christmas budget but will let you know as soon as I work it out! Can't wait for that £300 lego set! Hehe",
+        "I've got a Christmas film list lined up so be prepared! I'll work on the non-Christmas list!",
+        "Can't wait to see you soon x<br>( especially your smile :) )"
+    ],
+    signoff: "Always Yours,",
+    signature: "Abby",
+    author: "abby",
+})
+letters.push({
+    id: 4,
     title: "Christmasss",
     date: "25/12/23",
     content: [
@@ -44,7 +76,7 @@ letters.push({
     author: "jake"
 })
 letters.push({
-    id: 3,
+    id: 5,
     title: "Quarterversary",
     date: "3 months",
     content: [
@@ -59,7 +91,7 @@ letters.push({
     author: "jake"
 })
 letters.push({
-    id: 4,
+    id: 6,
     title: "Valentines?",
     date: "14/02/24",
     content: [
@@ -71,7 +103,7 @@ letters.push({
     author: "jake"
 })
 letters.push({
-    id: 5,
+    id: 7,
     title: "Valentines",
     date: "14/02/24",
     content: [
@@ -85,5 +117,36 @@ letters.push({
     ],
     signoff: "Always Yours,",
     signature: "Jake xxx",
+    author: "jake"
+})
+letters.push({
+    id: 8,
+    title: "Long awaited",
+    date: "?",
+    content: [
+        "Dear Jake,",
+        "Here is your long awaited letter! I wanted to start by saying thank you, thank you for the past few amazing months. Soon we will have been together for 6 months, half a year! The time has flown by yet I feel like we know eachother inside and out.",
+        "You amaze me more and more with your caring nature, ability to see the positive in everything, your stunning face and body and your drive to lean new things every day.",
+        "It is almost impossible to pick bu here are a few of my favourite moments with you!",
+        "<ul><li>You clinging to me in the cold sea like your life depended on it! x</li><li>Sitting on the bench at Harewood, talking about our future with almost everyone walking past making conversation with us x</li><li>Our Northumberland walking adventure particularly making the cairn and having Lion King moments on the rock! x</li><li>Writing letters in the sand at Bamburgh Castle x</li>",
+    ],
+    signoff: "You have become my safe place<br>Always yours",
+    signature: "Abby x",
+    ps: "P.S. Can we do a joint letter to our future selves",
     author: "abby"
+})
+letters.push({
+    id: 9,
+    title: "6 months strong",
+    date: "27/03/2024",
+    content: [
+        "Dear Abby,",
+        "We made it to what I'm going to call our first proper milestone! Typically I imagine one should way that through all our \"ups and downs\" we've made it through together, but that's not the case. I would strongly argue that we have only had \"ups\", going from strength to strength. While I guess that's the normal \"honeymoon period\" feeling for the first few weeks or months, we should commend ourselves for feeling like for 6 months! This all sounds like I'm teeing up to say the period is well and truely over, but quite the contrary, I think we'll feel this way forever! We have so much planned together that I don't think I could ever not be excited about my future with you.",
+        "Over the last 6 months we have been incredible together. We have: supported each other with our passions and hobbies of racing and running, swam in the ice cold sea, visited city wide art installations, hiked through the wilderness, battled away at badminton, gone clubbing, eaten out, eaten in, stayed up with the late night zoomies (lots... of... times...) and much more. THere hasn't been a single day, hour, minute, second that I have not enjoyed with you. Thank you for being so amazing. You are everything I could ever have asked for and more!",
+        "I must also mention how incredibly beautiful you are<sup>*</sup>; sometimes I'm so mesmerised that I have to just sit and watch you do your thing. I'm so proud of you getting your dissertation done, even if the study wasn't going to plan and your supervisor was grossly unhelpful. You've only got a little longer left of university before you look back and wish you could do it all again, so enjoy it while you can. I'll be here to support (read \"distract\") you all the way. I love you. ",
+    ],
+    signoff: "Always Yours,",
+    signature: "Jake xxx",
+    author: "jake",
+    ps: "P.S. <sup>*</sup> Obviously I'm not objectifying you here, but if I was; I would be imagining you as the biggest and most beautiful bluefin tuna flip flip flipping away in the deep blue sea",
 })

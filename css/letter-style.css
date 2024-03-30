@@ -3,6 +3,16 @@ body {
   margin: 10px;
 }
 
+/* prevents super/sub script messing with line height */
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+sub {
+  top: 0.4em;
+}
+
 .letter {
   background-color: #fff;
   max-width: min(100%, 1000px);
