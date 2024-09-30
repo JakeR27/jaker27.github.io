@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    height: 50vh;
+    width: 100%;
+}
+
+.marker {
+    background-image: url('../img/marker-red-40-m.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.marker-House {
+    background-image: url('../img/5-star-hotel-80-xs.png');
+}
+
+.marker-Camping {
+    background-image: url('../img/camp-80-m.png');
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}

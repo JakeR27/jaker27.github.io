@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet">
+    <link href="css/ajtours.css" rel="stylesheet">
+    <title>AJ Tours Map</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 col-xl-6">
+                <h2>Enter the details of a new place</h2>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Name</span>
+                    <input type="text" class="form-control" id="new-place-name" placeholder="Name" aria-label="Name">
+                    <span class="input-group-text">Category</span>
+                    <input type="text" class="form-control" id="new-place-cat" placeholder="Category" aria-label="Category">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Latitude</span>
+                    <input type="number" min="-90" max="90" step="any" class="form-control" id="new-place-lat" placeholder="Latitude" aria-label="Latitude">
+                    <span class="input-group-text">Longitude</span>
+                    <input type="number" min="-180" max="180" step="any" class="form-control" id="new-place-lng" placeholder="Longitude" aria-label="Longitude">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="newPlaceCallback()">Create</button>
+            </div>
+            <div height="1" class="w-100 mb-5 d-block d-xl-none"></div>
+            <div class="col-12 col-xl-6">
+                <h2>Select a place to record a visit</h2>
+                <div class="form-floating mb-3">
+                    <select class="form-select" id="record-place-id" aria-label="Floating label select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <label for="record-place-id">Works with selects</label>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Start</span>
+                    <input type="datetime-local" class="form-control" id="record-place-start" placeholder="Start" aria-label="Start">
+                    <span class="input-group-text">End</span>
+                    <input type="datetime-local" class="form-control" id="record-place-end" placeholder="End" aria-label="End">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Notes</span>
+                    <input type="text" class="form-control" id="record-place-notes" placeholder="Notes" aria-label="Notes">
+                </div>     
+                <button type="button" class="btn btn-primary" onclick="newVisitCallback()">Create</button>           
+            </div>
+            <div class="col-12">
+                <div id="map"></div>
+            </div>
+            <div class="col-12">
+                <button type="button" class="btn btn-primary" onclick="generateGeoCallback()">Generate GEO</button>   
+                <pre id="geo-out"></samp>
+            </div>
+            
+        </div>
+    </div>
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+    <script src="js/ajtours.js"></script>
+</body>
+</html>
