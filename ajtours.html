@@ -20,6 +20,10 @@
                     <input type="text" class="form-control" id="new-place-cat" placeholder="Category" aria-label="Category">
                 </div>
                 <div class="input-group mb-3">
+                    <span class="input-group-text">Description</span>
+                    <input type="text" class="form-control" id="new-place-description" placeholder="Description" aria-label="Description">
+                </div>
+                <div class="input-group mb-3">
                     <span class="input-group-text">Latitude</span>
                     <input type="number" min="-90" max="90" step="any" class="form-control" id="new-place-lat" placeholder="Latitude" aria-label="Latitude">
                     <span class="input-group-text">Longitude</span>
@@ -61,6 +65,7 @@
             
         </div>
     </div>
+    <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
     <script src="js/ajtours.js"></script>
 </body>

@@ -1,57 +1,28 @@
-function saveObject(key, value) {
-    let json = JSON.stringify(value);
-    console.log({json});
-    localStorage.setItem(key, json);
+let _JBS_MAPBOX_INITIALISED = false;
+let _JBS_MAPBOX_CLIENT;
+let _JBS_MAPBOX_TOKEN = "";
+
+function mapboxClient() {
+    if (_JBS_MAPBOX_INITIALISED) return _JBS_MAPBOX_CLIENT;
+    //if (_JBS_MAPBOX_TOKEN === "") _JBS_MAPBOX_TOKEN = document.getElementById("token").value;
+
+    _JBS_MAPBOX_CLIENT = mapboxSdk({accessToken: "sk.eyJ1IjoiamJzMjciLCJhIjoiY20xdHM0eGFrMDY4MDJqczUyaXdkaXJ6ZyJ9.Cdj2AjYQL8QGMp5TBv3atg"})
+    return _JBS_MAPBOX_CLIENT;
 }
 
-function loadObject(key) {
-    let obj = localStorage.getItem(key);
-    let parsed = JSON.parse(obj);
-    if (parsed === undefined) {
-        return {};
-    }
-    return parsed;
-}
-
-function constructPlace(name, category, lat, long) {
-    return {
-        "id": generateUUID(),
-        "name": name,
-        "category": category,
-        "latitude": lat,
-        "longitude": long
-    }
-}
-
-function constructVisit(placeid, start, end, notes) {
-    return {
-        "id": generateUUID(),
-        "placeid": placeid,
-        "start": start,
-        "end": end,
-        "notes": notes
-    }
-}
-
-function constructPlaceList(places) {
-    return {
-        "placelist": [...places]
-    }
-}
-
-function constructVisitList(visits) {
-    return {
-        "visitlist": [...visits]
-    }
+function datasetClient() {
+    return mapboxClient().datasets;
 }
 
 function newPlaceCallback() {
     let name = document.getElementById("new-place-name").value;
+    let desc = document.getElementById("new-place-description").value;
     let category = document.getElementById("new-place-cat").value;
     let lat = document.getElementById("new-place-lat").value;
     let long = document.getElementById("new-place-lng").value;
 
     if (name == "") return;
+    if (desc == "") return;
     if (lat == "") return;
     if (long == "") return;
 
@@ -61,21 +32,26 @@ function newPlaceCallback() {
     if (convertedLat === NaN) return;
     if (convertedLong === NaN) return;
 
-    let place = constructPlace(name, category, convertedLat, convertedLong);
+    let placeGeoJson = constructGeojsonFeature(name, desc, convertedLat, convertedLong, category, [])
+    // let place = constructPlace(name, category, convertedLat, convertedLong);
 
-    let placelist;
-    let currentPlaces;
-    try {
-        placelist = loadObject("places");
-        currentPlaces = placelist["placelist"];
-        currentPlaces.push(place);
-        placelist = placelist = constructPlaceList([...currentPlaces]);
-    } catch (error) {
-        placelist = constructPlaceList([place]);
-        currentPlaces = placelist["placelist"];
-    }
-    saveObject("places", placelist);
-    updateSelectBox(currentPlaces);
+    datasetClient().putFeature({
+        datasetId: "cm1ou3um9d8jq1npjxzurdsn6",
+        featureId: placeGeoJson.properties.placeId,
+        feature: placeGeoJson
+    })
+    .send()
+    .then(response => {
+        const feature = response.body;
+        console.log({feature});
+        updatePage();
+    })
+
+    
+}
+
+function updatePage() {
+    updateSelectBox();
 }
 
 function newVisitCallback() {
@@ -106,18 +82,30 @@ function newVisitCallback() {
 
 function constructPlaceOption(place) {
     let newOption = document.createElement("option")
-    newOption.value = place["id"];
-    newOption.text = place["name"];
+    newOption.value = place["properties"]["placeId"];
+    newOption.text = place["properties"]["title"];
     return newOption;
 }
 
-function updateSelectBox(placelist) {
-    console.log({placelist})
+let G_PLACES = [];
+function updateSelectBox() {
+    G_PLACES = [];
+    datasetClient().listFeatures({
+        datasetId: "cm1ou3um9d8jq1npjxzurdsn6",
+    })
+    .eachPage((err, res, next) => {
+        const features = res.body.features;
+        console.log({features});
+        G_PLACES.push(...features);
 
-    let dropdown = document.getElementById("record-place-id");
-    
-    let options = placelist.map(item => constructPlaceOption(item));
-    dropdown.replaceChildren(...options);
+        if (res.hasNextPage()) {
+            next();
+        } else {
+            let dropdown = document.getElementById("record-place-id");
+            let options = G_PLACES.map(item => constructPlaceOption(item));
+            dropdown.replaceChildren(...options);
+        }
+    });
 }
 
 function generateUUID() { // Public Domain/MIT
@@ -157,23 +145,27 @@ function constructGeojson(placelist, visitlist) {
     }
 }
 
-function constructGeojsonFeature(name, lat, long, category, visits) {
+function constructGeojsonFeature(name, desc, lat, long, category, visits) {
 
     console.log({lat, long});
 
-    let formattedVisits = visits.map(visit => `${visit["start"]} - ${visit["end"]}: ${visit["notes"]}`);
-    let desc = formattedVisits.join("<br>");
+
+    let id = generateUUID();
+    // let formattedVisits = visits.map(visit => `${visit["start"]} - ${visit["end"]}: ${visit["notes"]}`);
+    // let desc = formattedVisits.join("<br>");
 
     return {
         "type": "Feature",
         "geometry": {
             "type": "Point",
-            "coordinates": [lat, long]
+            "coordinates": [long, lat]
         },
         "properties": {
+            "placeId": id,
             "title": name,
             "description": desc,
-            "category": category
+            "category": category,
+            "visits": visits
         }
     }
 }
@@ -243,3 +235,5 @@ function populateMap(geojson) {
         .addTo(map);
     }
 }
+
+updatePage();
